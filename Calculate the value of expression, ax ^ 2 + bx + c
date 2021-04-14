@@ -1,0 +1,22 @@
+alert("Calculate the value of expression, ax ^ 2 + bx + c")
+var a = prompt('cin>> a');
+var b = prompt('cin>> b');
+var c  = prompt('cin>> c');
+
+var D=b*b-4*a*c;
+alert("D="+D);
+alert("sqrt(D)="+Math.sqrt(D));
+
+
+if(D>0){
+	alert(x1=("X1="+(-b+Math.sqrt(D))/2*a));
+	alert(x2=("X2="+(-b-Math.sqrt(D))/2*a));
+}
+
+else if(D==0){
+	alert("X="+(X=-b/(2*a)));
+}
+
+else alert("complex roots")
+	alert("X1="+(x1=(-b+i*Math.sqrt(D))/2*a));
+	alert("X2="+(x2=(-b-i*Math.sqrt(D))/2*a));
