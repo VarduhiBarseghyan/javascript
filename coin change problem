@@ -1,0 +1,58 @@
+var x=prompt(" Please input amount:");
+ document.body.innerHTML +="input number  = "+ x+"<br />"+"<br />";
+var y=x;
+var  coins = [100,200,500,1000,2000,5000,10000,20000,50000];
+
+if(x<100){
+	 document.body.innerHTML +="Money is not refundable"
+}
+document.body.innerHTML +="All possible versions:՝"+"<br />"+"<br />";
+// function count(arr) {
+//   return arr.reduce((prev, curr) => (prev[curr] = ++prev[curr] || 1, prev), {})
+// }
+function countDuplicates(obj, num){
+  obj[num] = (++obj[num] || 1);
+  // console.log(obj)
+  // console.log(num)
+  // obj.money=num;
+  // obj.count= (++obj.money || 1);
+  return obj;
+}
+let array=[];
+
+function changeCoin(amount, arr, start){  
+    for (var i = start; i < coins.length; i++) {
+    	
+        var remain = amount - coins[i];
+        var arr2 = arr.slice(0); // copy array
+        arr2.push(coins[i]);
+
+        if (remain < 0) {
+            return;
+        }
+        
+        if (remain === 0) {
+        	 console.log(arr2);
+        	 var answer = arr2.reduce(countDuplicates, {});
+        	 var myArray = Object.values(answer);
+        	 console.log(myArray)
+          var myString = JSON.stringify(answer);
+         
+  // document.body.innerHTML+= myString+"<br />";
+   array.unshift(myString);
+
+   //console.log(myString);
+        //console.log(answer);
+            return;
+        }
+        else {
+            changeCoin(remain, arr2, i);
+        }
+    }
+    
+}
+debugger;
+changeCoin(x, [], 0);
+for( let i=0;i<array.length;i++){
+	document.body.innerHTML+= array[i]+"<br />"
+}
