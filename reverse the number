@@ -1,0 +1,9 @@
+var num = prompt("write number");
+
+function reversenumber(n)
+{
+	n = n + "";
+	return n.split("").reverse().join("");
+}
+
+alert(reversenumber(num));
