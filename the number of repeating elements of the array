@@ -1,0 +1,28 @@
+alert ("Write a function that returns the number of duplicate elements in an array.");
+var arr = [];
+     var i, j, size, count = 0;
+
+    var size = prompt ("write array size");
+
+     / * Input elements in array * /
+     alert ("Import array elements");
+     for (i = 0; i <size; i ++)
+     {
+         arr [i] = prompt ("write number");
+     }
+
+    
+     for (i = 0; i <size; i ++)
+     {
+         for (j = i + 1; j <size; j ++)
+         {
+             / * If duplicate found then increment count by 1 * /
+             if (arr [i] == arr [j])
+             {
+                 count ++;
+                 break;
+             }
+         }
+     }
+
+     alert (count);
